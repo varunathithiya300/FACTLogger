@@ -1,5 +1,3 @@
-console.log("Hello World. Thank you !!!");
-
 // Displaying and closing the form
 const btn = document.querySelector(".btn-open");
 const form = document.querySelector(".fact-form");
@@ -24,3 +22,27 @@ function ageFact(year) {
 
 const factAge = ageFact(1994);
 console.log(factAge);
+
+// if-elseif-else
+
+let interestingVotes = 15;
+let mindblowingVotes = 16;
+
+if (interestingVotes === mindblowingVotes) {
+  alert("This fact is equally mindblowing and interesting !!!");
+} else if (interestingVotes > mindblowingVotes) {
+  console.log("This fact is interesting, not mindblowing.");
+} else {
+  console.log("This fact is mindblowing.");
+}
+
+// ternary operator - 3 parts -> 1) condition 2) true 3) false
+let votesFalse = 50;
+const totalUpvotes = interestingVotes + mindblowingVotes;
+const message =
+  totalUpvotes > votesFalse
+    ? "The fact is true"
+    : "Might be false, check more sources";
+// alert(message);
+
+// Working with strings
