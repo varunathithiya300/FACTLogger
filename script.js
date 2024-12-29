@@ -27,7 +27,7 @@ function calcFactAge(year) {
 }
 
 const factAge = calcFactAge(1994);
-console.log(factAge);
+// console.log(factAge);
 
 // if-elseif-else
 
@@ -42,7 +42,8 @@ if (interestingVotes === mindblowingVotes) {
   console.log("This fact is mindblowing.");
 }
 
-// ternary operator - 3 parts -> 1) condition 2) true 3) false
+// Ternary operator - 3 parts -> 1) condition 2) true 3) false
+// Syntax --> condition ? expression if true : expression if false
 let votesFalse = 50;
 const totalUpvotes = interestingVotes + mindblowingVotes;
 const message =
@@ -56,10 +57,18 @@ const message =
 // `` - A template literal
 const text = "Lisbon is the capital of Portugal";
 const upperText = text.toUpperCase();
-console.log(text);
-console.log(upperText);
+// console.log(text);
+// console.log(upperText);
 
 const str = `The current fact "${text}" is ${calcFactAge(
   2015
 )} years old. It is ${totalUpvotes > votesFalse ? "true" : "not true"}`;
-console.log(str);
+// console.log(str);
+
+// Arrow functions
+// Syntax -> declaration variable = (input) => expression
+const calcFactAgeArrow = (year) =>
+  year <= new Date().getFullYear()
+    ? new Date().getFullYear() - year
+    : `Impossible year. The input year must be less tham or equal to "${new Date().getFullYear()}"`;
+console.log(calcFactAgeArrow(2001));
