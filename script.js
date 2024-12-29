@@ -72,3 +72,23 @@ const calcFactAgeArrow = (year) =>
     ? new Date().getFullYear() - year
     : `Impossible year. The input year must be less tham or equal to "${new Date().getFullYear()}"`;
 console.log(calcFactAgeArrow(2001));
+
+// Arrays
+const fact = [
+  "Buenos Aires is the capital of Argentina",
+  2015,
+  true,
+  "Varun Athithiya",
+  `Full Stack Developer`,
+  `By April 2025`,
+];
+
+const [countrycapital, createdIn, yesorno, name, designation, achievedon] =
+  fact;
+console.log(countrycapital);
+console.log(fact.length);
+console.log(fact[fact.length - 1]);
+
+const newFact = [fact, "society"];
+console.log(newFact);
+console.log(...fact, "society");
