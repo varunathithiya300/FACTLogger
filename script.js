@@ -14,13 +14,19 @@ btn.addEventListener("click", function () {
 });
 
 // First Javascript function
-function ageFact(year) {
+function calcFactAge(year) {
   const currentYear = new Date().getFullYear();
   const age = currentYear - year;
-  return age;
+  if (age >= 0) {
+    return age;
+  } else {
+    alert(
+      `Impossible year. Year should be less than or equal to ${currentYear}`
+    );
+  }
 }
 
-const factAge = ageFact(1994);
+const factAge = calcFactAge(1994);
 console.log(factAge);
 
 // if-elseif-else
@@ -46,3 +52,14 @@ const message =
 // alert(message);
 
 // Working with strings
+// Method -> A method is a function called on something
+// `` - A template literal
+const text = "Lisbon is the capital of Portugal";
+const upperText = text.toUpperCase();
+console.log(text);
+console.log(upperText);
+
+const str = `The current fact "${text}" is ${calcFactAge(
+  2015
+)} years old. It is ${totalUpvotes > votesFalse ? "true" : "not true"}`;
+console.log(str);
