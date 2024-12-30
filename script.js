@@ -57,16 +57,17 @@ const message =
 // `` - A template literal
 const text = "Lisbon is the capital of Portugal";
 const upperText = text.toUpperCase();
-// console.log(text);
-// console.log(upperText);
+console.log(text);
+console.log(upperText);
 
 const str = `The current fact "${text}" is ${calcFactAge(
   2015
 )} years old. It is ${totalUpvotes > votesFalse ? "true" : "not true"}`;
-// console.log(str);
+console.log(str);
 
 // Arrow functions
 // Syntax -> declaration variable = (input) => expression
+// These functions are extremely helpful when we need to use one function inside another function
 const calcFactAgeArrow = (year) =>
   year <= new Date().getFullYear()
     ? new Date().getFullYear() - year
@@ -83,7 +84,7 @@ const fact = [
   `By April 2025`,
 ];
 
-const [countrycapital, createdIn, yesorno, name, designation, achievedon] =
+const [countrycapital, createdDuring, yesorno, name, designation, achievedon] =
   fact;
 console.log(countrycapital);
 console.log(fact.length);
@@ -92,3 +93,50 @@ console.log(fact[fact.length - 1]);
 const newFact = [fact, "society"];
 console.log(newFact);
 console.log(...fact, "society");
+
+// Working with objects
+const factObject = {
+  fact: "Buenos Aires is the capital of Argentina",
+  createdIn: 2024,
+  category: "society",
+  isCorrect: true,
+  createSummary: function () {
+    return `This fact "${this.fact}" was created in ${
+      this.createdIn
+    }. It is classified as ${this.category.toUpperCase()}.`;
+  },
+};
+console.log(factObject.createSummary());
+console.log(factObject);
+
+// Destructuring objects
+const { category, createdIn } = factObject;
+console.log(category);
+console.log(createdIn);
+
+// Looping through arrays
+
+// .forEach() - This method executes a provided function once for each array element. It does not return anything. -> undefined. Chaining is not possible.
+// .map() - This method creates a new array populated with the results of calling a provided function on every element in the calling array. Chaining is possible.
+[2, 3, 4, 5].forEach(function (el) {
+  console.log(el);
+});
+
+const CATEGORIES = [
+  { name: "technology", color: "#3b82f6" },
+  { name: "science", color: "#16a34a" },
+  { name: "finance", color: "#ef4444" },
+  { name: "society", color: "#eab308" },
+  { name: "entertainment", color: "#db2777" },
+  { name: "health", color: "#14b8a6" },
+  { name: "history", color: "#f97316" },
+  { name: "news", color: "#8b5cf6" },
+];
+
+const categoryNames = CATEGORIES.map((el) => el.name);
+console.log(categoryNames);
+const allCategoryNames = CATEGORIES.forEach(function (el) {
+  console.log(el.name);
+});
+const allColorCodes = CATEGORIES.map((el) => el.color);
+console.log(allColorCodes);
