@@ -1,6 +1,9 @@
 // Displaying and closing the form
 const btn = document.querySelector(".btn-open");
 const form = document.querySelector(".fact-form");
+const factsList = document.querySelector(".facts-list");
+
+factsList.innerHTML = "";
 
 btn.addEventListener("click", function () {
   console.log("CLICK");
@@ -12,6 +15,12 @@ btn.addEventListener("click", function () {
     btn.textContent = "Share a fact";
   }
 });
+
+console.dir(btn);
+
+/*
+
+// Fundamentals of JavaScript
 
 // First Javascript function
 function calcFactAge(year) {
@@ -183,3 +192,7 @@ const allCategoryNames = CATEGORIES.forEach(function (el) {
 
 const allColorCodes = CATEGORIES.map((el) => el.color);
 console.log(allColorCodes);
+
+*/
+
+// DOM - A tree where each HTML is represented as object. We use querySelector() to select elements from the DOM.
