@@ -36,6 +36,19 @@ const initialFacts = [
   },
 ];
 
+const CATEGORIES = [
+  { name: "technology", color: "#3b82f6" },
+  { name: "science", color: "#16a34a" },
+  { name: "finance", color: "#ef4444" },
+  { name: "society", color: "#eab308" },
+  { name: "entertainment", color: "#db2777" },
+  { name: "health", color: "#14b8a6" },
+  { name: "history", color: "#f97316" },
+  { name: "news", color: "#8b5cf6" },
+];
+
+console.log(CATEGORIES.find((category) => category.name === "society").color);
+
 // Selecting DOM elements
 const btn = document.querySelector(".btn-open");
 const form = document.querySelector(".fact-form");
@@ -59,7 +72,9 @@ function createFactsList(dataArray) {
       </p>
       <span 
         class="tags" 
-        style="background-color: #3b82f6">${fact.category}
+        style="background-color: ${
+          CATEGORIES.find((cat) => cat.name === fact.category).color
+        }">${fact.category}
       </span>
     </li>`
   );
@@ -68,7 +83,12 @@ function createFactsList(dataArray) {
 }
 
 createFactsList(initialFacts);
-// createFactsList([{ text: "Jonas" }]);
+
+// Filter vs Find
+// Filter -> returns an array of all the elements that pass the condition
+// Find -> returns the first element that passes the condition
+console.log([1, 5, -9, 35, 34].filter((el) => el > 0));
+console.log([25, 5, -9, 35, 34].find((el) => el > 0));
 
 // Toggle form visibility
 btn.addEventListener("click", function () {
