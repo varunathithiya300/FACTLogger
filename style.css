@@ -1,9 +1,9 @@
 /* Block Element - An element that occupies 100% of the space available to the parent */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 
 body {
   background-color: #292524;
