@@ -1,5 +1,5 @@
 **FOLDER BREAKDOWN:**
-**Note - In a big project, it is advisable to have one javascript file for one componenet.**
+**Note - In a big real world application, it is always prudential to have a dedicated javascript file for every componenet.**
 
 1. **public/** - *Contains static files directly served to the browser.*
     - index.html: The root HTML file where the React app mounts.
