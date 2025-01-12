@@ -1,5 +1,7 @@
+// Syntax to import modules -> import "./module"
 import "./style.css";
 
+// We have simply copied the data. In future, we will be loading this from the server database.
 const CATEGORIES = [
   { name: "technology", color: "#3b82f6" },
   { name: "science", color: "#16a34a" },
@@ -82,32 +84,39 @@ function FactList() {
     <section>
       <ul className="facts-list">
         {facts.map((fact) => (
-          <li key={fact.id} className="fact">
-            <p>
-              {fact.text}
-              <a href={fact.source} target="_blank">
-                (Source)
-              </a>
-            </p>
-            <span
-              className="tags"
-              style={{
-                backgroundColor: CATEGORIES.find(
-                  (cat) => cat.name == fact.category
-                ).color,
-              }}
-            >
-              {fact.category}
-            </span>
-            <div className="vote-buttons">
-              <button>👍{fact.votesInteresting}</button>
-              <button>🤯{fact.votesMindblowing}</button>
-              <button>⛔️{fact.votesFalse}</button>
-            </div>
-          </li>
+          <Fact factObj={fact} />
         ))}
       </ul>
     </section>
+  );
+}
+
+function Fact(props) {
+  console.log(props);
+  return (
+    <li key={props.factObj.id} className="fact">
+      <p>
+        {props.factObj.text}
+        <a href={props.factObj.source} target="_blank">
+          (Source)
+        </a>
+      </p>
+      <span
+        className="tags"
+        style={{
+          backgroundColor: CATEGORIES.find(
+            (cat) => cat.name == props.factObj.category
+          ).color,
+        }}
+      >
+        {props.factObj.category}
+      </span>
+      <div className="vote-buttons">
+        <button>👍{props.factObj.votesInteresting}</button>
+        <button>🤯{props.factObj.votesMindblowing}</button>
+        <button>⛔️{props.factObj.votesFalse}</button>
+      </div>
+    </li>
   );
 }
 
